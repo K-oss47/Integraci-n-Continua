@@ -23,4 +23,4 @@ jobs:
 
       - name: Enviar notificacion
         run: |
-          curl -d "Nuevo push realizado al repositorio" https://ntfy.sh/devops-itla
+ curl -d "Prueba de Kelvin #2" https://ntfy.sh/devops-itla
