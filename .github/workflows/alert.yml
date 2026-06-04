@@ -1,0 +1,26 @@
+name: Alerta DevOps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ejecutar Hola Mundo
+        run: node securityApp.js
+
+      - name: Enviar notificacion
+        run: |
+          curl -d "Nuevo push realizado al repositorio" https://ntfy.sh/devops-itla
